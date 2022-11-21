@@ -39,11 +39,12 @@ const RoomPage: NextPage = () => {
     });
 
     io.on("clientMessage", (message: string) => {
+      if (!isStranger) return;
       setClientMessage(message);
     });
 
     if (io) return () => io.disconnect();
-  }, [room, router]);
+  }, [room, router, isStranger]);
 
   const sendMessage = async () => {
     if (isStranger ? !strangerMessage : !clientMessage) return;
@@ -73,7 +74,7 @@ const RoomPage: NextPage = () => {
       </Head>
       {!socket ? (
         <div className={styles.connecting}>
-          <p>Conectando...</p>
+          <p className="text-glow">Conectando</p>
         </div>
       ) : (
         <section className={styles.program}>

@@ -24,6 +24,34 @@ div.clientInput {
     }
 }
 
+div.connecting {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >p {
+        color: var(--primary-color);
+
+        &::after {
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: bottom;
+            animation: ellipsis steps(4, end) 900ms infinite;
+            content: "\2026";
+            /* ascii code for the ellipsis character */
+            width: 0px;
+        }
+    }
+}
+
+@keyframes ellipsis {
+    to {
+        width: 10px;
+    }
+}
+
 div.strangerInput {
 
     margin-top: 32px;
