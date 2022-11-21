@@ -23,7 +23,7 @@ const RoomPage: NextPage = () => {
   useEffect((): any => {
     if (!room || !router) return;
 
-    const io = SocketIOClient("http://localhost:3000", {
+    const io = SocketIOClient(process.env.API_BASE_URL as string, {
       path: "/api/socketio",
       extraHeaders: {
         room: room as string,
