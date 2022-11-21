@@ -6,7 +6,7 @@
 
 A copy of the terminal program used in Cellbit's Ordem Paranormal: Sinais do Outro Lado tabletop RPG.
 
-Made with Next.js and SCSS, hosted in Vercel.
+Made with Next.js and SCSS, hosted in Heroku.
 
 <img src="./images/room.png" width="100%" />
 

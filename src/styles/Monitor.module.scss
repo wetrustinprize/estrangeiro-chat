@@ -11,9 +11,16 @@ main.monitor {
     width: $mainW;
     height: min(100vh * 0.95, $mainH);
 
+    @media (max-width: 768px) {
+        width: 100vw;
+        height: 100vh;
+    }
+
     section.main {
         padding: $borderSize;
         height: 100%;
+
+        @media (max-width: 768px) {}
     }
 
     section.monitor {
@@ -30,6 +37,11 @@ main.monitor {
         z-index: 2;
 
         pointer-events: none;
+
+        @media (max-width: 768px) {
+            display: none;
+            padding: 0;
+        }
     }
 
     section.scan {
@@ -57,10 +69,10 @@ main.monitor {
     }
 
     90% {
-        background-position: 0 100%;
+        background-position: 0 200%;
     }
 
     100% {
-        background-position: 0 100%;
+        background-position: 0 200%;
     }
 }
