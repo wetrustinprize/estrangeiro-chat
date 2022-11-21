@@ -1,0 +1,57 @@
+section.main {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 24px;
+
+    p.credits {
+        color: var(--primary-color);
+
+        >a {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    input {
+        text-align: center;
+        width: 200px;
+        padding: 10px;
+
+        color: var(--primary-color);
+
+        background-color: var(--background-color);
+        border: #ACC66E solid 1px;
+
+        &::placeholder {
+            color: var(--primary-color);
+        }
+
+        &:disabled {
+            box-shadow: none;
+        }
+    }
+
+    button {
+        padding: 5px;
+
+        color: var(--primary-color);
+
+        background-color: transparent;
+        border: #ACC66E solid 1px;
+
+        &:not(:disabled) {
+            cursor: pointer;
+        }
+
+        &:disabled {
+            border-color: var(--background-color);
+            color: var(--background-color);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+    }
+}

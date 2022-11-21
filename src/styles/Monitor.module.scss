@@ -1,0 +1,66 @@
+main.monitor {
+    position: relative;
+
+    $mainW: 80vw;
+    $mainH: $mainW * 0.7;
+    $borderSize: 85px;
+
+    background-color: var(--background-color);
+    background-image: url("../../public/scanlines.png");
+
+    width: $mainW;
+    height: min(100vh * 0.95, $mainH);
+
+    section.main {
+        padding: $borderSize;
+        height: 100%;
+    }
+
+    section.monitor {
+        position: absolute;
+
+        height: 100%;
+        width: 100%;
+
+        border: 85px solid transparent;
+        border-image-source: url("../../public/monitor-border.png");
+        border-image-repeat: stretch;
+        border-image-slice: 117 182 117 182;
+
+        z-index: 2;
+
+        pointer-events: none;
+    }
+
+    section.scan {
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+        background-image: url("../../public/scan.png");
+        background-repeat: no-repeat;
+
+        z-index: 1;
+
+        mix-blend-mode: color-dodge;
+        opacity: 1;
+        animation: scanlines linear 12s infinite;
+
+        pointer-events: none;
+    }
+}
+
+@keyframes scanlines {
+    0% {
+        background-position: 0 -100%;
+    }
+
+    90% {
+        background-position: 0 100%;
+    }
+
+    100% {
+        background-position: 0 100%;
+    }
+}
